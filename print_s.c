@@ -12,7 +12,7 @@ int print_str(va_list str)
 	char *s = va_arg(str, char*);
 
 	if (s == NULL)
-		s = "(null)";
+		return ("(null)");
 	while (s[i] != '\0')
 	{
 		counter += (write(1, &s[i], 1));
