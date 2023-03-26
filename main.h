@@ -8,7 +8,7 @@
 int _putchar(char c);
 int _printf(const char *format, ...);
 int print_char(va_list c);
-/*int print_str(va_list str);*/
+int print_str(va_list str);
 
 typedef struct list_t
 {

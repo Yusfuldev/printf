@@ -8,15 +8,15 @@
  */
 int print_str(va_list str)
 {
-	int i = 0;
+	int i = 0, counter = 0;
 	char *s = va_arg(str, char*);
 
 	if (s == NULL)
 		s = "(null)";
-	while(s[i])
+	while(s[i] != '\0')
 	{
-		write(1, &s[i], 1);
+		counter += (write(1, &s[i], 1));
 		i++;
 	}
-	return (i);
+	return (counter);
 }
