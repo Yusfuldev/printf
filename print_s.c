@@ -14,7 +14,6 @@ int print_str(va_list str)
 	if (s == NULL)
 	{
 		s = "(null)";
-		return (0);
 	}
 	while (s[i] != '\0')
 	{
