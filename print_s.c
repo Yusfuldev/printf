@@ -11,7 +11,7 @@ int print_str(va_list str)
 	int i = 0, counter = 0;
 	char *s = va_arg(str, char*);
 
-	if (s == '\0')
+	if (s == NULL)
 		s = "(null)";
 	while (s[i] != '\0')
 	{
