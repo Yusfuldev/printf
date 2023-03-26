@@ -44,7 +44,7 @@ int _printf(const char *format, ...)
 		{
 			format++;
 			f = handler(format);
-			if (format == NULL)
+			if (*format == '\0')
 				return (-1);
 			else if (f == NULL)
 			{
