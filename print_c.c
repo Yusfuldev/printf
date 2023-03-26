@@ -1,10 +1,19 @@
 #include "main.h"
 
-int print_c(va_list c)
+/**
+ * print_char - Prints a character.
+ *
+ * @c: The character to print.
+ *
+ * Return: Always 1.
+ */
+int print_char(va_list c)
 {
-	int i = 0;
+    char ch = (char)va_arg(c, int);
 
-	char m = (char) va_arg(c, int);
-	_putchar(m);
-	return (i);
+    if (ch == '\0')
+        return (0);
+
+    int m = write(1, &ch, 1);
+    return (m);
 }
