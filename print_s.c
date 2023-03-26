@@ -11,8 +11,8 @@ int print_str(va_list str)
 	int i = 0, counter = 0;
 	char *s = va_arg(str, char*);
 
-	if (s == NULL)
-		return ("(null)");
+	if (s == '\0')
+		return (-1);
 	while (s[i] != '\0')
 	{
 		counter += (write(1, &s[i], 1));
