@@ -13,7 +13,7 @@ int print_str(va_list str)
 
 	if (s == NULL)
 		s = "(null)";
-	while(s[i] != '\0')
+	while (s[i] != '\0')
 	{
 		counter += (write(1, &s[i], 1));
 		i++;

@@ -36,7 +36,6 @@ int _printf(const char *format, ...)
 	char *j = 0;
 	unsigned int i = 0, counter = 0;
 
-
 	va_start(c, format);
 
 	while (*format)
@@ -56,7 +55,6 @@ int _printf(const char *format, ...)
 			{
 				counter += f(c);
 			}
-			
 		}
 		else if (*format == '%' && *(format + 1) == '%')
 		{
