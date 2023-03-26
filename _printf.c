@@ -15,12 +15,13 @@ int (*handler(const char *format))(va_list)
 		{"s", print_str},
 		{NULL, NULL}
 	};
+	
 	for (; l[i].t != NULL; i++)
 	{
 		if (*l[i].t == *format)
-			break;
+			return (l[i].f);
 	}
-	return (l[i].f);
+	return (NULL);
 }
 
 /**
@@ -33,8 +34,7 @@ int _printf(const char *format, ...)
 {
 	va_list c;
 	int (*f)(va_list) = NULL;
-	char *j = 0;
-	unsigned int i = 0, counter = 0;
+	unsigned int counter = 0;
 
 	va_start(c, format);
 
@@ -48,8 +48,8 @@ int _printf(const char *format, ...)
 				return (-1);
 			else if (f == NULL)
 			{
-				write(1, &format[i - 1], 1);
-				write(1, &format[i], 1);
+				write(1, (format- 1), 1);
+				write(1, format, 1);
 				counter += 2;
 			} else
 			{
@@ -58,9 +58,9 @@ int _printf(const char *format, ...)
 		}
 		else if (*format == '%' && *(format + 1) == '%')
 		{
-			j = "%";
-			write(1, &j, 1);
-			counter++;
+			format++;
+			write(1, (format), 1);
+			counter+=1;
 		}
 		else
 		{
