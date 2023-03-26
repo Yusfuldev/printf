@@ -15,7 +15,7 @@ int (*handler(const char *format))(va_list)
 		{"s", print_str},
 		{NULL, NULL}
 	};
-	
+
 	for (; l[i].t != NULL; i++)
 	{
 		if (*l[i].t == *format)
@@ -48,7 +48,7 @@ int _printf(const char *format, ...)
 				return (-1);
 			else if (f == NULL)
 			{
-				write(1, (format- 1), 1);
+				write(1, (format - 1), 1);
 				write(1, format, 1);
 				counter += 2;
 			} else
@@ -60,7 +60,7 @@ int _printf(const char *format, ...)
 		{
 			format++;
 			write(1, (format), 1);
-			counter+=1;
+			counter += 1;
 		}
 		else
 		{
