@@ -28,7 +28,7 @@ int print_unsigned(va_list u)
 	while (j > 0)
 	{
 		j--;
-		*p++ =  m[j];
+		*p++ =  m[j] + '0';
 		counter++;
 	}
 	va_end(u);
