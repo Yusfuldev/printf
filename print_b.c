@@ -20,13 +20,12 @@ int print_b(va_list b)
 		n /= 2;
 	}
 
-	while (i >= 0)
+	while (i != 0)
 	{
 		i--;
 		*p++ = num[i] + '0';
 		count++;
 	}
-	*p = '\0';
 	write(1, buf, count);
 	return (count);
 }
