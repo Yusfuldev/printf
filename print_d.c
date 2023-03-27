@@ -1,39 +1,37 @@
 #include "main.h"
 /**
- *
-*/
+ * print_digit - A function that prints an unsigned integer
+ * @i: digit to print
+ * Return: number of printed digits
+ */
 int print_digit(va_list i)
 {
-	int a[10];
-	int j = 1, m = 1000000000, n, sum = 0, counter = 0;
-	char k;
+	char buff[1024];
+	char *p = buff;
+	int n = 0, counter = 0, divisor = 1;
 
 	n = va_arg(i, int);
+
 	if (n < 0)
 	{
 		n *= -1;
-		k = '-';
-		write(1, &k,1);
+		*p++ = '-';
 		counter++;
 	}
-	a[0] = n / m;
-
-	for (; j < 10; j++)
+	while ((n / 10) >= divisor)
 	{
-		m /= 10;
-		a[j] = (n / m) % 10;
+		divisor *= 10;
 	}
 
-	for (j = 0; j < 10; j++)
+	while (divisor > 0)
 	{
-		sum += a[j];
-		if (sum != 0 || j == 9)
-		{
-			k = ('0' + a[j]);
-			write(1, &k, 1);
-			counter++;
-		}
+		*p++ =  n / divisor + '0';
+		counter++;
+		n %= divisor;
+		divisor /= 10;
+
 	}
 	va_end(i);
+	write(1, buff, counter);
 	return (counter);
 }

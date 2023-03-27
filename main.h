@@ -23,6 +23,6 @@ int print_digit(va_list dig);
 int print_i(va_list args);
 int print_b(va_list b);
 int _printf(const char *format, ...);
-
+int print_unsigned(va_list u);
 #endif
 
