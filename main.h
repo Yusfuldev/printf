@@ -17,6 +17,7 @@ typedef struct list_t
 } list;
 
 int _printf(const char *format, ...);
+int _putchar(char c);
 int print_char(va_list c);
 int print_str(va_list str);
 int print_digit(va_list dig);
