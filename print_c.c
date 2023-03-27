@@ -13,7 +13,7 @@ int print_char(va_list c)
 	int m = 0;
 
 	m += write(1, &ch, 1);
-	if (ch == '\0')
-		return (0);
+	if (m == -1)
+		return (-1);
 	return (m);
 }
