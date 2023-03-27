@@ -40,7 +40,6 @@ int _printf(const char *format, ...)
 	unsigned int counter = 0;
 
 	va_start(c, format);
-
 	while (*format)
 	{
 		if (*format == '%' && *(format + 1) != '%')
@@ -55,9 +54,7 @@ int _printf(const char *format, ...)
 				write(1, format, 1);
 				counter += 2;
 			} else
-			{
 				counter += f(c);
-			}
 			format++;
 		}
 		else if (*format == '%' && *(format + 1) == '%')
