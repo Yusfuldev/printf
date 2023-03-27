@@ -26,7 +26,7 @@ int print_b(va_list b)
 		*p++ = num[i] + '0';
 		count++;
 	}
-	va_end(b);
 	write(1, buf, count);
+	va_end(b);
 	return (count);
 }
