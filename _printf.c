@@ -13,6 +13,8 @@ int (*handler(const char *format))(va_list)
 	list l[] = {
 		{"c", print_char},
 		{"s", print_str},
+		{"d", print_digit},
+		{"i", print_i},
 		{NULL, NULL}
 	};
 
@@ -55,19 +57,21 @@ int _printf(const char *format, ...)
 			{
 				counter += f(c);
 			}
+			format++;
 		}
 		else if (*format == '%' && *(format + 1) == '%')
 		{
 			format++;
 			write(1, (format), 1);
 			counter += 1;
+			format++;
 		}
 		else
 		{
 			write(1, format, 1);
 			counter++;
+			format++;
 		}
-		format++;
 	}
 	va_end(c);
 	return (counter);
