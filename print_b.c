@@ -19,12 +19,7 @@ int print_b(va_list b)
 		num[i] = n % 2;
 		n /= 2;
 	}
-/*	if (n == 0)
-	{
-		*p++ = '0';
-		count++;
-	}
-*/
+
 	while (i != 0)
 	{
 		i--;
