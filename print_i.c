@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_d - Print an integer
+ * print_i - Print an integer
  *
  * @args: A va_list containing a single int argument
  *
