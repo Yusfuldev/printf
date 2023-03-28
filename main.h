@@ -22,7 +22,7 @@ int print_char(va_list c);
 int print_str(va_list str);
 int print_digit(va_list dig);
 int print_i(va_list args);
-int print_b(va_list b);
+int print_binary(va_list b);
 int _printf(const char *format, ...);
 int print_unsigned(va_list u);
 int print_o(va_list o);
