@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * print_r - A function that prints a string in reverse
+ * print_r - Prints a string in reverse
  * @r: string to print
  * Return: number of printed characters
  */
