@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
  * print_b - prints an unsigned int i binary notation
@@ -8,24 +9,28 @@
 
 int print_b(va_list b)
 {
-	unsigned int n, num[31];
+	unsigned int n, num[32];
 	int count = 0, i= 0;
-	char buf[32];
-	char *p = buf;
 
 	n = va_arg(b, unsigned int);
-	for (; n != 0; i++)
+	if (n == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+	if (num == NULL)
+		return (-1);
+	for (; n > 0; i++)
 	{
 		num[i] = n % 2;
 		n /= 2;
 	}
-
-	while (i != 0)
+	i -=1;
+	while (i >= 0)
 	{
+		_putchar(num[i] + '0');
 		i--;
-		*p++ = num[i] + '0';
 		count++;
 	}
-	write(1, buf, count);
 	return (count);
 }
