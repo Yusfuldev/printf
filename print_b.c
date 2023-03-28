@@ -2,12 +2,12 @@
 #include <stdlib.h>
 
 /**
- * print_b - prints an unsigned int i binary notation
+ * print_binary - prints an unsigned int i binary notation
  * @b: unsigned in to print
  * Return: number of printed digits
  */
 
-int print_b(va_list b)
+int print_binary(va_list b)
 {
 	unsigned int n, num[32];
 	int count = 0, i= 0;
