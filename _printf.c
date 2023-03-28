@@ -15,7 +15,7 @@ int (*handler(const char *format))(va_list)
 		{"s", print_str},
 		{"d", print_digit},
 		{"i", print_i},
-		{"b", print_b},
+		{"b", print_binary},
 		{"u", print_unsigned},
 		{"R", print_R},
 		{"X", print_X},
