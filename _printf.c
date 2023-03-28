@@ -17,6 +17,12 @@ int (*handler(const char *format))(va_list)
 		{"i", print_i},
 		{"b", print_b},
 		{"u", print_unsigned},
+		{"R", print_R},
+		{"X", print_X},
+		{"r", print_r},
+		{"o", print_o},
+		{"x", print_x},
+		{"S", print_S},
 		{NULL, NULL}
 	};
 

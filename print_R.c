@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 #include <stdlib.h>
 
 /**
@@ -11,24 +11,24 @@ int print_R(va_list R)
 	char *str;
 	unsigned int i = 0, j = 0;
 	int counter = 0;
-	char in[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char out[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	char input[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char output[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	str = va_arg(R, char *);
 	if (str == NULL)
 		str = "(ahyy)";
 	for (; str[i]; i++)
 	{
-		for (j = 0; in[j]; j++)
+		for (j = 0; input[j]; j++)
 		{
-			if (in[j] == str[i])
+			if (input[j] == str[i])
 			{
-				_putchar(out[j]);
+				_putchar(output[j]);
 				counter++;
 				break;
 			}
 		}
-		if (!in[j])
+		if (!input[j])
 		{
 			_putchar(str[i]);
 			counter++;
