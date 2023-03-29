@@ -10,7 +10,7 @@
 int print_binary(va_list b)
 {
 	unsigned int n, num[32];
-	int count = 0, i= 0;
+	int count = 0, i = 0;
 
 	n = va_arg(b, unsigned int);
 	if (n == 0)
@@ -25,7 +25,7 @@ int print_binary(va_list b)
 		num[i] = n % 2;
 		n /= 2;
 	}
-	i -=1;
+	i -= 1;
 	while (i >= 0)
 	{
 		_putchar(num[i] + '0');

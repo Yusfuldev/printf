@@ -57,9 +57,7 @@ int _printf(const char *format, ...)
 				return (-1);
 			else if (f == NULL)
 			{
-				write(1, (format - 1), 1);
-				write(1, format, 1);
-				counter += 2;
+				_putchar("(null)");
 			} else
 				counter += f(c);
 			format++;
