@@ -43,7 +43,7 @@ int (*handler(const char *format))(va_list)
 int _printf(const char *format, ...)
 {
 	va_list c;
-	int (*f)(va_list) = NULL;
+	int (*f)(va_list);
 	unsigned int counter = 0;
 
 	va_start(c, format);
@@ -59,8 +59,12 @@ int _printf(const char *format, ...)
 				return (-1);
 			else if (f == NULL)
 			{
+<<<<<<< HEAD
 				_putchar(*(format - 1));
 				_putchar(*format);
+=======
+				return (-1);
+>>>>>>> 8eaedb3f2470ed3209a7c1eb49a2dfa4baf4b69b
 			} else
 				counter += f(c);
 			format++;
