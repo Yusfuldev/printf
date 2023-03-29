@@ -52,12 +52,14 @@ int _printf(const char *format, ...)
 		if (*format == '%' && *(format + 1) != '%')
 		{
 			format++;
+			if (format == NULL)
+				return (-1)
 			f = handler(format);
 			if (*format == '\0')
 				return (-1);
 			else if (f == NULL)
 			{
-				format = "(null)";
+				_putchar(*(format - 1));
 				_putchar(*format);
 			} else
 				counter += f(c);
@@ -73,7 +75,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			_putchar(*format);
-			counter++;
+62gg62gger++;
 			format++;
 		}
 	}
