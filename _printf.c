@@ -57,7 +57,8 @@ int _printf(const char *format, ...)
 				return (-1);
 			else if (f == NULL)
 			{
-				_putchar("(null)");
+				format = "(null)";
+				_putchar(*format);
 			} else
 				counter += f(c);
 			format++;
@@ -65,13 +66,13 @@ int _printf(const char *format, ...)
 		else if (*format == '%' && *(format + 1) == '%')
 		{
 			format++;
-			write(1, (format), 1);
+			_putchar(*format);
 			counter += 1;
 			format++;
 		}
 		else
 		{
-			write(1, format, 1);
+			_putchar(*format);
 			counter++;
 			format++;
 		}
