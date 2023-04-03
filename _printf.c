@@ -53,18 +53,15 @@ int _printf(const char *format, ...)
 		{
 			format++;
 			if (format == NULL)
-				return (-1)
+				return (-1);
 			f = handler(format);
 			if (*format == '\0')
 				return (-1);
 			else if (f == NULL)
 			{
-<<<<<<< HEAD
 				_putchar(*(format - 1));
 				_putchar(*format);
-=======
 				return (-1);
->>>>>>> 8eaedb3f2470ed3209a7c1eb49a2dfa4baf4b69b
 			} else
 				counter += f(c);
 			format++;
@@ -79,7 +76,6 @@ int _printf(const char *format, ...)
 		else
 		{
 			_putchar(*format);
-62gg62gger++;
 			format++;
 		}
 	}
